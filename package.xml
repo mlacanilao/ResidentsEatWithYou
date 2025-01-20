@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Meta>
+  <title>Residents Eat With You</title>
+  <id>omegaplatinum.elin.residentseatwithyou</id>
+  <author>OmegaPlatinum</author>
+  <loadPriority>100</loadPriority>
+  <description>
+    When you start eating at a [b]Dining Spot Sign[/b], residents will join you to eat together.
+    食堂の立札の近くで食事を始めると、住人が一緒に食事をします。
+
+    [h1] Features [/h1]
+    [list]
+    [*] Residents will join you for meals when you eat near a [b]Dining Spot Sign[/b].
+    [*] Residents will increase their affinity with you.
+    [*] Food priority is as follows:
+    [list]
+    [*] From their inventory
+    [*] From shared containers
+    [*] Randomly generated if no food is available
+    [/list]
+    [/list]
+
+    [h1] Compatibility [/h1]
+    This mod works with existing save files.
+
+    Supports Game Version: 0.23.75
+
+    [h1] 特徴 [/h1]
+    [list]
+    [*] [b]食堂の立札[/b]の近くでプレイヤーが食事を始めると、住人が参加して一緒に食事をします。
+    [*] 住人はプレイヤーとの親密度を上げます。
+    [*] 食べ物の優先度は次の通りです:
+    [list]
+    [*] 自分のインベントリから
+    [*] 共有コンテナから
+    [*] 食べ物がない場合はランダム生成
+    [/list]
+    [/list]
+
+    [h1] 互換性 [/h1]
+    このMODは既存のセーブデータと完全に互換性があります。
+
+    対応ゲームバージョン: 0.23.75
+  </description>
+  <tags>General,Balance</tags>
+  <visibility>Public</visibility>
+  <version>0.23.75</version>
+</Meta>
