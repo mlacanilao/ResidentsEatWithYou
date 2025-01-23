@@ -26,10 +26,24 @@ namespace ResidentsEatWithYou
                 return true;
             }
             
-            foreach (Chara chara in EClass._zone?.branch?.members)
+            foreach (Chara chara in EClass._map?.charas)
             {
-                if (chara.memberType == FactionMemberType.Livestock ||
-                    chara.IsPC == true)
+                bool enableGuestsEatWithYou = ResidentsEatWithYouConfig.EnableGuestsEatWithYou?.Value ?? false;
+                List<string> selectedLivestockIds = ResidentsEatWithYouConfig.SelectedLivestockIds;
+
+                if (chara.memberType == FactionMemberType.Guest && 
+                    enableGuestsEatWithYou == false)
+                {
+                    continue;
+                }
+                
+                if (chara.memberType == FactionMemberType.Livestock &&
+                    selectedLivestockIds.Contains(item: chara.id) == false)
+                {
+                    continue;
+                }
+
+                if (chara.IsPC == true)
                 {
                     continue;
                 }
@@ -50,11 +64,7 @@ namespace ResidentsEatWithYou
                 }
                 if (thing == null && !chara.IsPCParty)
                 {
-                    if (!chara.IsPCFaction && EClass.rnd(a: 8) != 0)
-                    {
-                        chara.hunger.Mod(a: -30);
-                    }
-                    else if (!chara.things.IsFull(y: 0))
+                    if (!chara.things.IsFull(y: 0))
                     {
                         thing = ThingGen.CreateFromCategory(idCat: "food", lv: EClass.rnd(a: EClass.rnd(a: 60) + 1) + 10);
                         thing.isNPCProperty = true;
@@ -64,10 +74,15 @@ namespace ResidentsEatWithYou
                         }
                     }
                 }
-
+                
                 if (thing != null)
                 {
-                    chara.TryMoveTowards(EClass.pc?.pos);
+                    chara.TryMoveTowards(p: EClass.pc?.pos);
+
+                    if (chara.memberType == FactionMemberType.Livestock)
+                    {
+                        chara.MoveImmediate(p: EClass.pc?.pos?.GetRandomPoint(radius: 4, requireLos: true, allowChara: false, allowBlocked: false));
+                    }
 
                     chara.SetAIImmediate(g: new AI_Eat
                     {

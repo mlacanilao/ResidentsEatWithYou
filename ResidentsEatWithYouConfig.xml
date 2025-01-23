@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="ConfigLayoutSchema.xsd">
+    <hlayout id="hlayout01">
+        <vlayout id="vlayout01" border="true">
+            <title>title01</title>
+
+            <toggle id="enableGuestsEatWithYouToggle">
+                <contentId>toggle01</contentId>
+                <tooltip>tooltip01</tooltip>
+            </toggle>
+        </vlayout>
+
+        <vlayout id="vlayout02" border="true">
+            <topic>topic01</topic>
+
+            <one_choice id="dropdown01" type="dropdown" value="0">
+                <choice>
+                    <contentId>dropdown01.item01</contentId>
+                </choice>
+            </one_choice>
+            <button id="button01">
+                <contentId>button01.name</contentId>
+                <tooltip>button01.tooltip</tooltip>
+            </button>
+
+            <topic>topic02</topic>
+            <one_choice id="dropdown02" type="dropdown" value="0">
+                <choice>
+                    <contentId>dropdown02.item01</contentId>'
+                </choice>
+            </one_choice>
+            <button id="button02">
+                <contentId>button02.name</contentId>
+                <tooltip>button02.tooltip</tooltip>
+            </button>
+        </vlayout>
+    </hlayout>
+</config>

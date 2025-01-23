@@ -11,7 +11,9 @@
     [h1] Features [/h1]
     [list]
     [*] Residents will join you for meals when you eat near a [b]Dining Spot Sign[/b].
-    [*] Residents will increase their affinity with you.
+    [*] Livestock can join meals based on their IDs, configurable in the settings.
+    [*] Guests can optionally join meals if enabled in the settings.
+    [*] Residents and livestock will increase their affinity with you when they join a meal.
     [*] Food priority is as follows:
     [list]
     [*] From their inventory
@@ -23,12 +25,22 @@
     [h1] Compatibility [/h1]
     This mod works with existing save files.
 
+    [h1] Requirements [/h1]
+    This mod requires the [b]Mod Options[/b] mod only for accessing the Config menu. The core functionality of this mod will still work without it. Please subscribe to the [b]Mod Options[/b] mod for menu-based configuration:
+    [list]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3381182341]https://steamcommunity.com/sharedfiles/filedetails/?id=3381182341[/url]
+    [/list]
+
+    [img]https://steamuserimages-a.akamaihd.net/ugc/5167280227770663/E5BD799ABC06AC117640C1322F3FFCA03541FBE2/?imw=5000&amp;imh=5000&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false.png[/img]
+
     Supports Game Version: 0.23.75
 
     [h1] 特徴 [/h1]
     [list]
     [*] [b]食堂の立札[/b]の近くでプレイヤーが食事を始めると、住人が参加して一緒に食事をします。
-    [*] 住人はプレイヤーとの親密度を上げます。
+    [*] 家畜は設定で指定されたIDに基づいて食事に参加できます。
+    [*] ゲストは、設定を有効にすると食事に参加できます。
+    [*] 住人や家畜が食事に参加すると、プレイヤーとの親密度が上がります。
     [*] 食べ物の優先度は次の通りです:
     [list]
     [*] 自分のインベントリから
@@ -40,6 +52,14 @@
     [h1] 互換性 [/h1]
     このMODは既存のセーブデータと完全に互換性があります。
 
+    [h1] 必須MOD [/h1]
+    このMODは [b]Mod Options[/b] MOD が必要です。ただし、Config メニューにアクセスするためだけです。主要な機能はこれなしでも動作します。[b]Mod Options[/b] MOD をサブスクライブするには、以下のリンクを参照してください：
+    [list]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3381182341]https://steamcommunity.com/sharedfiles/filedetails/?id=3381182341[/url]
+    [/list]
+
+    [img]https://steamuserimages-a.akamaihd.net/ugc/5167280227770752/07AC50B37C90005E9E13CF073F9ABEFFBDCF67C4/?imw=5000&amp;imh=5000&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false.png[/img]
+    
     対応ゲームバージョン: 0.23.75
   </description>
   <tags>General,Balance</tags>
