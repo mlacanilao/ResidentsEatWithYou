@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace ResidentsEatWithYou
 {
-    internal class AIActPatch
+    internal static class AIActPatch
     {
         internal static bool OnSuccessPrefix(AIAct __instance)
         {
@@ -31,6 +31,11 @@ namespace ResidentsEatWithYou
                 bool enableGuestsEatWithYou = ResidentsEatWithYouConfig.EnableGuestsEatWithYou?.Value ?? false;
                 List<string> selectedLivestockIds = ResidentsEatWithYouConfig.SelectedLivestockIds;
 
+                if (chara.noMove == true)
+                {
+                    continue;
+                }
+                
                 if (chara.memberType == FactionMemberType.Guest && 
                     enableGuestsEatWithYou == false)
                 {
