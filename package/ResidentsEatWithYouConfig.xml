@@ -18,15 +18,22 @@
                     <contentId>dropdown01.item01</contentId>
                 </choice>
             </one_choice>
+            <button id="button03">
+                <contentId>button03.name</contentId>
+                <tooltip>button03.tooltip</tooltip>
+            </button>
             <button id="button01">
                 <contentId>button01.name</contentId>
                 <tooltip>button01.tooltip</tooltip>
             </button>
 
             <topic>topic02</topic>
+            <input id="input02" char_limit="80">
+                <placeholder>input02.placeholder</placeholder>
+            </input>
             <one_choice id="dropdown02" type="dropdown" value="0">
                 <choice>
-                    <contentId>dropdown02.item01</contentId>'
+                    <contentId>dropdown02.item01</contentId>
                 </choice>
             </one_choice>
             <button id="button02">

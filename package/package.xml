@@ -5,20 +5,20 @@
   <author>OmegaPlatinum</author>
   <loadPriority>100</loadPriority>
   <description>
-    When you start eating at a [b]Dining Spot Sign[/b], residents will join you to eat together.
-    食堂の立札の近くで食事を始めると、住人が一緒に食事をします。
+    When you start eating inside the area of a [b]Dining Spot Sign[/b], residents will join you to eat together.
+    [b]食堂の立札[/b]で指定された範囲内で食事を始めると、住人が一緒に食事をします。
 
     [h1] Features [/h1]
     [list]
-    [*] Residents will join you for meals when you eat near a [b]Dining Spot Sign[/b].
-    [*] Livestock can join meals based on their IDs, configurable in the settings.
+    [*] Residents will join you for meals when you eat inside the area of a [b]Dining Spot Sign[/b].
+    [*] Your selected livestock can join meals based on their IDs, configurable in the settings.
     [*] Guests can optionally join meals if enabled in the settings.
-    [*] Residents and livestock will increase their affinity with you when they join a meal.
-    [*] Food priority is as follows:
+    [*] Meal participants will increase their affinity with you when they finish an invited meal at the dining spot.
+    [*] Food is chosen as follows:
     [list]
-    [*] From their inventory
-    [*] From shared containers
-    [*] Randomly generated if no food is available
+    [*] From the participant's inventory
+    [*] Members of your faction may use shared containers
+    [*] Non-party participants may receive generated food if nothing else is available
     [/list]
     [/list]
 
@@ -33,26 +33,26 @@
 
     [img]https://steamuserimages-a.akamaihd.net/ugc/5167280227770663/E5BD799ABC06AC117640C1322F3FFCA03541FBE2/?imw=5000&amp;imh=5000&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false.png[/img]
 
-    Supports Game Version: 0.23.129
+    [img] https://img.shields.io/badge/Supports%20Game%20Version-EA%2023.307%20Stable-green [/img]
 
     [h1] 特徴 [/h1]
     [list]
-    [*] [b]食堂の立札[/b]の近くでプレイヤーが食事を始めると、住人が参加して一緒に食事をします。
-    [*] 家畜は設定で指定されたIDに基づいて食事に参加できます。
+    [*] [b]食堂の立札[/b]で指定された範囲内でプレイヤーが食事を始めると、住人が参加して一緒に食事をします。
+    [*] プレイヤー勢力の家畜は、設定で選択したIDに基づいて食事に参加できます。
     [*] ゲストは、設定を有効にすると食事に参加できます。
-    [*] 住人や家畜が食事に参加すると、プレイヤーとの親密度が上がります。
-    [*] 食べ物の優先度は次の通りです:
+    [*] 招待された食事を食堂の範囲内で完了した参加者は、プレイヤーとの友好度が上がります。
+    [*] 食べ物は次のように選ばれます:
     [list]
-    [*] 自分のインベントリから
-    [*] 共有コンテナから
-    [*] 食べ物がない場合はランダム生成
+    [*] 参加者のインベントリから
+    [*] プレイヤー勢力の参加者は共有コンテナを使用できます
+    [*] それ以外に食べ物がない場合、非パーティ参加者には食べ物が生成されることがあります
     [/list]
     [/list]
 
     [h1] 互換性 [/h1]
     このMODは既存のセーブデータと完全に互換性があります。
 
-    [h1] 必須MOD [/h1]
+    [h1] 設定メニュー用MOD [/h1]
     このMODは [b]Mod Options[/b] MOD が必要です。ただし、Config メニューにアクセスするためだけです。主要な機能はこれなしでも動作します。[b]Mod Options[/b] MOD をサブスクライブするには、以下のリンクを参照してください：
     [list]
     [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3381182341]https://steamcommunity.com/sharedfiles/filedetails/?id=3381182341[/url]
@@ -60,9 +60,9 @@
 
     [img]https://steamuserimages-a.akamaihd.net/ugc/5167280227770752/07AC50B37C90005E9E13CF073F9ABEFFBDCF67C4/?imw=5000&amp;imh=5000&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false.png[/img]
     
-    対応ゲームバージョン: 0.23.129
+    [img] https://img.shields.io/badge/対応ゲームバージョン-EA%2023.307%20Stable-green [/img]
   </description>
   <tags>General,Balance</tags>
   <visibility>Public</visibility>
-  <version>0.23.129</version>
+  <version>0.23.307</version>
 </Meta>

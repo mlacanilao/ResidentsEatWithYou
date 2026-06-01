@@ -1,70 +1,90 @@
-﻿using System;
-using System.Linq;
+using System;
+using System.Runtime.CompilerServices;
 using BepInEx;
 using HarmonyLib;
+using ResidentsEatWithYou.UI;
 
-namespace ResidentsEatWithYou
+namespace ResidentsEatWithYou;
+
+internal static class ModInfo
 {
-    internal static class ModInfo
+    internal const string Guid = "omegaplatinum.elin.residentseatwithyou";
+    internal const string Name = "Residents Eat With You";
+    internal const string Version = "2.0.0";
+    internal const string ModOptionsGuid = "evilmask.elinplugins.modoptions";
+}
+
+[BepInPlugin(GUID: ModInfo.Guid, Name: ModInfo.Name, Version: ModInfo.Version)]
+[BepInDependency(ModInfo.ModOptionsGuid, BepInDependency.DependencyFlags.SoftDependency)]
+internal class ResidentsEatWithYou : BaseUnityPlugin
+{
+    internal static ResidentsEatWithYou? Instance { get; private set; }
+
+    private void Awake()
     {
-        internal const string Guid = "omegaplatinum.elin.residentseatwithyou";
-        internal const string Name = "Residents Eat with You";
-        internal const string Version = "1.1.2.0";
-        internal const string ModOptionsGuid = "evilmask.elinplugins.modoptions";
-        internal const string ModOptionsAssemblyName = "ModOptions";
+        Instance = this;
+        ResidentsEatWithYouConfig.LoadConfig(config: Config);
+        Harmony.CreateAndPatchAll(type: typeof(Patcher), harmonyInstanceId: ModInfo.Guid);
+
+        if (HasModOptionsPlugin() == false)
+        {
+            return;
+        }
+
+        try
+        {
+            RegisterModOptionsUI();
+        }
+        catch (Exception ex)
+        {
+            LogError(message: $"An error occurred during UI registration: {ex}");
+        }
     }
 
-    [BepInPlugin(GUID: ModInfo.Guid, Name: ModInfo.Name, Version: ModInfo.Version)]
-    internal class ResidentsEatWithYou : BaseUnityPlugin
+    internal static void LogDebug(object message, [CallerMemberName] string caller = "")
     {
-        internal static ResidentsEatWithYou Instance { get; private set; }
+        Instance?.Logger.LogDebug(data: $"[{caller}] {message}");
+    }
 
-        private void Awake()
-        {
-            Instance = this;
-            
-            ResidentsEatWithYouConfig.LoadConfig(config: Config);
-            
-            Harmony.CreateAndPatchAll(type: typeof(Patcher), harmonyInstanceId: ModInfo.Guid);
-        }
+    internal static void LogInfo(object message)
+    {
+        Instance?.Logger.LogInfo(data: message);
+    }
 
-        private void Start()
+    internal static void LogError(object message)
+    {
+        Instance?.Logger.LogError(data: message);
+    }
+
+    [MethodImpl(methodImplOptions: MethodImplOptions.NoInlining)]
+    private static void RegisterModOptionsUI()
+    {
+        UIController.RegisterUI();
+    }
+
+    private static bool HasModOptionsPlugin()
+    {
+        try
         {
-            if (IsModOptionsInstalled())
+            foreach (var obj in ModManager.ListPluginObject)
             {
-                try
+                if (obj is not BaseUnityPlugin plugin)
                 {
-                    UIController.RegisterUI();
+                    continue;
                 }
-                catch (Exception ex)
-                {
-                    Log(payload: $"An error occurred during UI registration: {ex.Message}");
-                }
-            }
-            else
-            {
-                Log(payload: "Mod Options is not installed. Skipping UI registration.");
-            }
-        }
 
-        internal static void Log(object payload)
-        {
-            Instance?.Logger.LogInfo(data: payload);
+                if (plugin.Info.Metadata.GUID == ModInfo.ModOptionsGuid)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
-        
-        private bool IsModOptionsInstalled()
+        catch (Exception ex)
         {
-            try
-            {
-                return AppDomain.CurrentDomain
-                    .GetAssemblies()
-                    .Any(predicate: assembly => assembly.GetName().Name == ModInfo.ModOptionsAssemblyName);
-            }
-            catch (Exception ex)
-            {
-                Log(payload: $"Error while checking for Mod Options: {ex.Message}");
-                return false;
-            }
+            LogError(message: $"Error while checking for Mod Options: {ex}");
+            return false;
         }
     }
 }
