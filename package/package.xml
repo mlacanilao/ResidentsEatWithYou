@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Meta>
-  <title>Residents Eat With You</title>
+  <title>Omega's Residents Eat With You</title>
   <id>omegaplatinum.elin.residentseatwithyou</id>
   <author>OmegaPlatinum</author>
   <loadPriority>100</loadPriority>
@@ -33,7 +33,7 @@
 
     [img]https://steamuserimages-a.akamaihd.net/ugc/5167280227770663/E5BD799ABC06AC117640C1322F3FFCA03541FBE2/?imw=5000&amp;imh=5000&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false.png[/img]
 
-    [img] https://img.shields.io/badge/Supports%20Game%20Version-EA%2023.307%20Stable-green [/img]
+    [img] https://img.shields.io/badge/Supports%20Game%20Version-EA%2023.338%20Stable-green [/img]
 
     [h1] 特徴 [/h1]
     [list]
@@ -60,9 +60,9 @@
 
     [img]https://steamuserimages-a.akamaihd.net/ugc/5167280227770752/07AC50B37C90005E9E13CF073F9ABEFFBDCF67C4/?imw=5000&amp;imh=5000&amp;ima=fit&amp;impolicy=Letterbox&amp;imcolor=%23000000&amp;letterbox=false.png[/img]
     
-    [img] https://img.shields.io/badge/対応ゲームバージョン-EA%2023.307%20Stable-green [/img]
+    [img] https://img.shields.io/badge/対応ゲームバージョン-EA%2023.338%20Stable-green [/img]
   </description>
   <tags>General,Balance</tags>
   <visibility>Public</visibility>
-  <version>0.23.307</version>
+  <version>0.23.338</version>
 </Meta>

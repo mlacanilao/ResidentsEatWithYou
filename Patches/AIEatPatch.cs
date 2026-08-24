@@ -86,7 +86,7 @@ internal static class AIEatPatch
     {
         foreach (TraitSpotDining spot in map.props.installed.traits.List<TraitSpotDining>())
         {
-            foreach (Point spotPoint in spot.ListPoints())
+            foreach (Point spotPoint in spot.ListPoints(center: null, onlyPassable: true, allowChara: true))
             {
                 if (point.Equals(obj: spotPoint) == true)
                 {
